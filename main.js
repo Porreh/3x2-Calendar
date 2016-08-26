@@ -90,9 +90,9 @@ class Calendar {
   }
 
   nextMonth() {
-    let yo = this.curDay;
-    let month = yo.getMonth() + 1;
-    let year = yo.getFullYear() + 1;
+    console.log(this.curDay);
+    let month = this.curDay.getMonth() + 1;
+    let year = this.curDay.getFullYear() + 1;
     this.html = ``;
     this.month = month;
     this.year = year;
