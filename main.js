@@ -92,8 +92,8 @@ class Calendar {
   }
 
   nextMonth() {
-    this.month = this.date.getMonth() + 1;
-    this.year = this.date.getFullYear() + 1;
+    this.month = this.date[0] + 1;
+    this.year = this.date[1] + 1;
     this.render();
     console.info(`Next month`);
   }
