@@ -4,22 +4,23 @@ class Calendar {
     this.html = ``;
     this.month = (isNaN(month) || month == null) ? this.curDay.getMonth() : month;
     this.year = (isNaN(year) || year == null) ? this.curDay.getFullYear() : year;
-    this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-      this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 
-                           'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 
-                           'Октябрь', 'Ноябрь', 'Декабрь'];
+    this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+    this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
+      'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+      'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
   }
 
   generateHTML() {
     let firstDay = new Date(this.year, this.month, 0),
-        startDay = firstDay.getDay(),
-        monthLength = getDaysInMonth(this.year, this.month),
-        monthName = this.labelsMonths[this.month],
-        labelsDay = this.labelsDay,
-        labelsMonths = this.labelsMonths,
-        curDay = this.curDay,
-        year = this.year,
-        html = ``;
+      startDay = firstDay.getDay(),
+      monthLength = getDaysInMonth(this.year, this.month),
+      monthName = this.labelsMonths[this.month],
+      labelsDay = this.labelsDay,
+      labelsMonths = this.labelsMonths,
+      curDay = this.curDay,
+      year = this.year,
+      html = ``;
 
     function getDaysInMonth(year, month) {
       let maxDays = new Date(year, month, 0);
@@ -33,7 +34,7 @@ class Calendar {
 
     function genWeek() {
       html += `<tr>`;
-      for (let i = 0; i <= 6; i++ ){
+      for (let i = 0; i <= 6; i++) {
         html += `<td class="week">${labelsDay[i]}</td>`;
       }
       html += `</tr>`;
@@ -44,7 +45,7 @@ class Calendar {
       let day = 1;
 
       for (let i = 0; i < 9; i++) {
-        for (let j = 0; j <= 6; j++) { 
+        for (let j = 0; j <= 6; j++) {
           if (today === day) {
             html += `<td class="day today">`;
           } else {
@@ -92,13 +93,12 @@ class Calendar {
 
 
 
-
 let calendar = new Calendar();
 document.write(calendar.render());
 
-(function() {
+(function () {
   let button = document.createElement('button');
-  button.setAttribute('tag','buttonnext');
+  button.setAttribute('tag', 'buttonnext');
   document.body.appendChild(button);
   let nb = document.getElementsByTagName("buttonnext");
   nb.addEventListener("click", calendar.nextMonth);
