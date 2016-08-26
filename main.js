@@ -2,8 +2,8 @@ class Calendar {
   constructor(month, year) {
     this.date = new Date();
     this.html = ``;
-    this.month = (isNaN(month) || month == null) ? this.curDay.getMonth() : month;
-    this.year = (isNaN(year) || year == null) ? this.curDay.getFullYear() : year;
+    this.month = (isNaN(month) || month == null) ? this.date.getMonth() : month;
+    this.year = (isNaN(year) || year == null) ? this.date.getFullYear() : year;
     this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
     this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
                         'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
