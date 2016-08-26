@@ -33,7 +33,7 @@ class Calendar {
     function genWeek() {
       html += `<tr>`;
       for (let i = 0; i <= 6; i++) {
-        html += `<td class="week">${this.labelsDay[i]}</td>`;
+        html += `<td class="week">${self.labelsDay[i]}</td>`;
       }
       html += `</tr>`;
     }
