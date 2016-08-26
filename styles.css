@@ -1,0 +1,40 @@
+*{transition: all 0.3s ease;}
+
+.day {
+  text-align: center;
+  padding: 0;
+  margin: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: x-large;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+.today {
+  background-color: #B2DFDB;
+}
+
+.day:hover {
+  background-color: #BDBDBD;;
+}
+
+.week {
+  text-align: center;
+  padding: 0;
+  margin: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: larger;
+  font-family: sans-serif;
+}
+
+.month {
+  text-align: center;
+  padding: 0;
+  margin: 1px;
+  font-size: larger;
+  font-family: sans-serif;
+}
