@@ -17,9 +17,6 @@ class Calendar {
         startDay = firstDay.getDay(),
         monthLength = getDaysInMonth(this.year, this.month),
         monthName = this.labelsMonths[this.month],
-        labelsDay = this.labelsDay,
-        labelsMonths = this.labelsMonths,
-        year = this.year,
         html = ``;
 
     // DONE
@@ -30,19 +27,19 @@ class Calendar {
 
     function genYear() {
       html += `<table class="calendar">`;
-      html += `<tr><th class="month" colspan="7">${monthName} ${year}</th></tr>`;
+      html += `<tr><th class="month" colspan="7">${monthName} ${this.year}</th></tr>`;
     }
 
     function genWeek() {
       html += `<tr>`;
       for (let i = 0; i <= 6; i++) {
-        html += `<td class="week">${labelsDay[i]}</td>`;
+        html += `<td class="week">${this.labelsDay[i]}</td>`;
       }
       html += `</tr>`;
     }
 
     function genDays() { // REDO
-      let today = this.currentDate.getDate();
+      let today = self.currentDate.getDate();
       let day = 1;
 
       for (let i = 0; i < 9; i++) {
