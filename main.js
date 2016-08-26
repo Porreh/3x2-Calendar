@@ -42,7 +42,7 @@ class Calendar {
     }
 
     function genDays() { // REDO
-      let today = self.currentDate.getDate();
+      let today = this.currentDate.getDate();
       let day = 1;
 
       for (let i = 0; i < 9; i++) {
