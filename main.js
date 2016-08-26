@@ -1,6 +1,6 @@
 class Calendar {
   constructor(month, year) {
-    this.curDay = new Date();
+    this.date = new Date();
     this.html = ``;
     this.month = (isNaN(month) || month == null) ? this.curDay.getMonth() : month;
     this.year = (isNaN(year) || year == null) ? this.curDay.getFullYear() : year;
@@ -11,13 +11,13 @@ class Calendar {
   }
 
   generateHTML() {
-    let firstDay = new Date(this.year, this.month, 0),
+    let self = this,
+        firstDay = new Date(this.year, this.month, 0),
         startDay = firstDay.getDay(),
         monthLength = getDaysInMonth(this.year, this.month),
         monthName = this.labelsMonths[this.month],
         labelsDay = this.labelsDay,
         labelsMonths = this.labelsMonths,
-        curDay = this.curDay,
         year = this.year,
         html = ``;
 
@@ -41,7 +41,7 @@ class Calendar {
     }
 
     function genDays() { // REDO
-      let today = curDay.getDate();
+      let today = self.date.getDate();
       let day = 1;
 
       for (let i = 0; i < 9; i++) {
@@ -84,18 +84,16 @@ class Calendar {
   }
   
   clear() {
-    this.html = ``;
-    console.log(this.curDay);
-    this.month = this.curDay.getMonth();
-    this.year = this.curDay.getFullYear();
+    this.html = null;
+    this.month = null;
+    this.year = null;
   }
 
   nextMonth() {
-    let month = this.curDay.getMonth() + 1;
-    let year = this.curDay.getFullYear() + 1;
-    this.html = ``;
-    this.month = month;
-    this.year = year;
+    let month = this.date.getMonth();
+    let year = this.date.getFullYear();
+    this.month = month + 1;
+    this.year = year + 1;
     this.render();
     console.info(`Next month`);
   }
