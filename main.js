@@ -110,5 +110,5 @@ calendar.render();
 
 let button = document.createElement('button');
 document.body.appendChild(button);
-button.addEventListener("click", calendar.nextMonth;
+button.addEventListener("click", calendar.nextMonth);
 
