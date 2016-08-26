@@ -80,15 +80,22 @@ class Calendar {
   render() {
     this.generateHTML();
     document.write(this.html);
+    this.clear();
+  }
+  
+  clear() {
+    this.html = ``;
+    this.month = this.curDay.getMonth();
+    this.year = this.curDay.getFullYear();
   }
 
   nextMonth() {
-    // let month = this.curDay.getMonth() + 1;
-    // let year = this.curDay.getFullYear() + 1;
-    // this.html = ``;
-    // this.month = month;
-    // this.year = year;
-    // this.render();
+    let month = this.curDay.getMonth() + 1;
+    let year = this.curDay.getFullYear() + 1;
+    this.html = ``;
+    this.month = month;
+    this.year = year;
+    this.render();
     console.info(`Next month`);
   }
 }
