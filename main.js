@@ -1,10 +1,10 @@
 class Calendar {
   constructor(month, year) {
-    this.date = new Date();
-    this.currentDate = [];
+    this.currentDate = new Date();
+    this.date = [];
     this.html = ``;
-    this.month = (isNaN(month) || month == null) ? this.date.getMonth() : month;
-    this.year = (isNaN(year) || year == null) ? this.date.getFullYear() : year;
+    this.month = (isNaN(month) || month == null) ? this.currentDate.getMonth() : month;
+    this.year = (isNaN(year) || year == null) ? this.currentDate.getFullYear() : year;
     this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
     this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
                         'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
@@ -42,7 +42,7 @@ class Calendar {
     }
 
     function genDays() { // REDO
-      let today = self.date.getDate();
+      let today = self.currentDate.getDate();
       let day = 1;
 
       for (let i = 0; i < 9; i++) {
@@ -92,13 +92,9 @@ class Calendar {
   }
 
   nextMonth() {
-    let nxt = this.currentDate;
-    console.log(nxt);
-    // let month = this.date.getMonth();
-    // let year = this.date.getFullYear();
-    // this.month = month + 1;
-    // this.year = year + 1;
-    // this.render();
+    this.month = this.date.getMonth() + 1;
+    this.year = this.date.getFullYear() + 1;
+    this.render();
     console.info(`Next month`);
   }
 }
