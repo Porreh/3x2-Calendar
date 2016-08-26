@@ -1,7 +1,7 @@
 class Calendar {
   constructor(month, year) {
     this.date = new Date();
-    this.currentDate = [12];
+    this.currentDate = [];
     this.html = ``;
     this.month = (isNaN(month) || month == null) ? this.date.getMonth() : month;
     this.year = (isNaN(year) || year == null) ? this.date.getFullYear() : year;
@@ -106,10 +106,16 @@ class Calendar {
 
 
 
+
+
 let calendar = new Calendar();
 calendar.render();
 
+function nextMonth() {
+  calendar.nextMonth();
+}
+
 let button = document.createElement('button');
 document.body.appendChild(button);
-button.addEventListener("click", calendar.nextMonth);
+button.addEventListener("click", nextMonth);
 
