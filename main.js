@@ -21,6 +21,7 @@ class Calendar {
         year = this.year,
         html = ``;
 
+    // DONE
     function getDaysInMonth(year, month) {
       let maxDays = new Date(year, month, 0);
       return maxDays.getDate();
@@ -63,7 +64,8 @@ class Calendar {
         }
       }
     }
-
+    
+    // DONE
     function generator() {
       genYear();
       genWeek();
@@ -73,19 +75,21 @@ class Calendar {
     generator();
     this.html = html;
   }
-
+  
+  // DONE
   render() {
     this.generateHTML();
-    return this.html;
+    document.write(this.html);
   }
 
   nextMonth() {
-    let month = this.curDay.getMonth() + 1;
-    let year = this.curDay.getFullYear() + 1;
-    this.html = ``;
-    this.month = month;
-    this.year = year;
-    this.render();
+    // let month = this.curDay.getMonth() + 1;
+    // let year = this.curDay.getFullYear() + 1;
+    // this.html = ``;
+    // this.month = month;
+    // this.year = year;
+    // this.render();
+    console.info(`Next month`);
   }
 }
 
@@ -93,12 +97,9 @@ class Calendar {
 
 
 let calendar = new Calendar();
-document.write(calendar.render());
+calendar.render();
 
-(function () {
-  let button = document.createElement('button');
-  button.setAttribute('tag', 'buttonnext');
-  document.body.appendChild(button);
-  let nb = document.getElementsByTagName("buttonnext");
-  nb.addEventListener("click", calendar.nextMonth);
-})();
+let button = document.createElement('button');
+document.body.appendChild(button);
+button.addEventListener("click", calendar.nextMonth);
+
