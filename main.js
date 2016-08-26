@@ -90,11 +90,12 @@ class Calendar {
   }
 
   nextMonth() {
-    let month = this.date.getMonth();
-    let year = this.date.getFullYear();
-    this.month = month + 1;
-    this.year = year + 1;
-    this.render();
+    console.log(this.date);
+    // let month = this.date.getMonth();
+    // let year = this.date.getFullYear();
+    // this.month = month + 1;
+    // this.year = year + 1;
+    // this.render();
     console.info(`Next month`);
   }
 }
