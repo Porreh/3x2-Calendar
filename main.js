@@ -91,8 +91,9 @@ class Calendar {
     this.year = null;
   }
 
-  nextMonth(date = this.currentDate) {
-    console.log(date);
+  nextMonth() {
+    let nxt = this.currentDate;
+    console.log(nxt);
     // let month = this.date.getMonth();
     // let year = this.date.getFullYear();
     // this.month = month + 1;
