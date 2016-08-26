@@ -6,21 +6,20 @@ class Calendar {
     this.year = (isNaN(year) || year == null) ? this.curDay.getFullYear() : year;
     this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
     this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
-      'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
-      'Октябрь', 'Ноябрь', 'Декабрь'
-    ];
+                        'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+                        'Октябрь', 'Ноябрь', 'Декабрь'];
   }
 
   generateHTML() {
     let firstDay = new Date(this.year, this.month, 0),
-      startDay = firstDay.getDay(),
-      monthLength = getDaysInMonth(this.year, this.month),
-      monthName = this.labelsMonths[this.month],
-      labelsDay = this.labelsDay,
-      labelsMonths = this.labelsMonths,
-      curDay = this.curDay,
-      year = this.year,
-      html = ``;
+        startDay = firstDay.getDay(),
+        monthLength = getDaysInMonth(this.year, this.month),
+        monthName = this.labelsMonths[this.month],
+        labelsDay = this.labelsDay,
+        labelsMonths = this.labelsMonths,
+        curDay = this.curDay,
+        year = this.year,
+        html = ``;
 
     function getDaysInMonth(year, month) {
       let maxDays = new Date(year, month, 0);
