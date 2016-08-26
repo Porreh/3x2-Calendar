@@ -27,7 +27,7 @@ class Calendar {
 
     function genYear() {
       html += `<table class="calendar">`;
-      html += `<tr><th class="month" colspan="7">${monthName} ${this.year}</th></tr>`;
+      html += `<tr><th class="month" colspan="7">${monthName} ${self.year}</th></tr>`;
     }
 
     function genWeek() {
