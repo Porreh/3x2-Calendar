@@ -85,12 +85,12 @@ class Calendar {
   
   clear() {
     this.html = ``;
+    console.log(this.curDay);
     this.month = this.curDay.getMonth();
     this.year = this.curDay.getFullYear();
   }
 
   nextMonth() {
-    console.log(this.curDay);
     let month = this.curDay.getMonth() + 1;
     let year = this.curDay.getFullYear() + 1;
     this.html = ``;
