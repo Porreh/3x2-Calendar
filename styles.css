@@ -5,15 +5,13 @@
 }
 
 .day {
-  text-align: center;
-  padding: 0;
+  background-color: aquamarine;
+  display: flex;
   margin: 1px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  font-size: x-large;
   font-family: sans-serif;
-  font-weight: 300;
 }
 
 .today {
