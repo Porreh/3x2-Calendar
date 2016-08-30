@@ -88,8 +88,15 @@ calendar.render();
 
 function getID() {
   let attribute = this.getAttribute("id");
-  console.log(attribute);
+  console.log(this);
 };
+
+function klp() {
+  // let attribute = this.getAttribute("id");
+  let db = [];
+  
+}
+
 Array.from(document.querySelectorAll(".day")).forEach(function(element) {
   element.addEventListener('click', getID);
 });
