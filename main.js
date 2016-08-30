@@ -7,13 +7,10 @@ class Calendar {
 
   generateHTML() {
     let currentDate = new Date(),
-        // firstDay = new Date(this.year, this.month, 0),
-        // startDay = firstDay.getDay(),
         labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
         labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
                         'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
                         'Октябрь', 'Ноябрь', 'Декабрь'],
-        // monthName = this.labelsMonths[this.month],
         html = ``;
 
     function getDaysInMonth(month, year) {
@@ -37,30 +34,41 @@ class Calendar {
       html += `</div>`;
     }
 
-    function genDays() { // REDO
-      // let monthLength = getDaysInMonth(),
-      // let today = currentDate.getDate();
-      // let day = 1;
+    function genDays(month) {
+      let firstDay = new Date(currentDate.getFullYear(), month, 0);
+      let startDay = firstDay.getDay();
+      let monthLength = getDaysInMonth(month, currentDate.getFullYear()),
+      let today = currentDate.getDate();
+      let day = 1;
 
-      // for (let i = 0; i < 9; i++) {
-      //   for (let j = 0; j <= 6; j++) {
-      //     if (today === day) {
-      //       html += `<td class="day today">`;
-      //     } else {
-      //       html += `<td class="day">`;
-      //     }
-      //     if (day <= monthLength && (i > 0 || j >= startDay)) {
-      //       html += day;
-      //       day++;
-      //     }
-      //     html += `</td>`;
-      //   }
-      //   if (day > monthLength) {
-      //     break;
-      //   } else {
-      //     html += `</tr><tr>`;
-      //   }
-      // }
+      for (let i = 0; i < 9; i++) {
+        
+        
+          for (let j = 0; j < 7; j++) {
+            
+              if (day === today) {
+                html += `<div id="${month}&${day}" class="day today">`;
+              } else {
+                html += `<div id="${month}&${day}" class="day">`;
+              }
+              
+              if (day <= monthLength && (i > 0 || j >= startDay)) {
+                html += day;
+                day++;
+              }
+              
+              html += `</div>`;
+          }
+          
+          
+          if (day > monthLength) {
+            break;
+          } else {
+            html += `</tr><tr>`;
+          }
+          
+          
+      }
     }
     
     function generator() {
