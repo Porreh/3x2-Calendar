@@ -4,6 +4,11 @@
   transition: all 0.3s ease;
 }
 
+.board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .days {
     display: flex;
     flex-direction: row;
