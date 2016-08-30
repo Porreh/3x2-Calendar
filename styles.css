@@ -61,12 +61,13 @@
     font-family: sans-serif;
 }
 
-.week_days {
+.week_name {
   display: flex;
     align-items: center;
     width: 24px;
     height: 24px;
     justify-content: center;
+    cursor: default;
 }
 
 .month {
@@ -85,4 +86,5 @@
     color: #64B5F6;
     font-family: sans-serif;
     font-weight: bold;
+    cursor: default;
 }
