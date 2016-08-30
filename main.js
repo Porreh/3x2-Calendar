@@ -46,7 +46,7 @@ class Calendar {
         
           for (let j = 0; j < 7; j++) {
             
-              if (day === today) {
+              if (day === today && month === currentDate.getMonth()) {
                 html += `<div id="${month + 1}&${day}" class="day today">`;
               } else {
                 html += `<div id="${month + 1}&${day}" class="day">`;
@@ -90,7 +90,6 @@ class Calendar {
   
   render() {
     this.generateHTML();
-    console.log(this.html);
     document.write(this.html);
   }
 }
