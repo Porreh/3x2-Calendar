@@ -42,17 +42,8 @@
   
 }
 
-.clear:hover {
-  background-color: #5c6bc0;
-  
-}
-
 .today {
   background-color: #42A5F5;
-}
-
-.day:hover {
-  background-color: #BDBDBD;;
 }
 
 .week {
