@@ -63,8 +63,9 @@
 
 .month {
   display: flex;
-  flex-direction: column;
-  width: 350px;
+    flex-direction: column;
+    width: 256px;
+    margin: 16px;
 }
 
 .month_name {
