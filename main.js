@@ -40,9 +40,9 @@ class Calendar {
         for (let j = 0; j < 7; j++) {
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             if (day === today && month === currentDate.getMonth()) {
-              html += `<div id="${month + 1}&${day}" day="${day}" class="day today">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day today wrk">`;
             } else {
-              html += `<div id="${month + 1}&${day}" day="${day}" class="day">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day wrk">`;
             }
           } else {
             html += `<div class="day clear">`;
@@ -88,7 +88,13 @@ let calendar = new Calendar();
 
 calendar.render();
 
-function klp() {
+function create3x2() {
+  let listID;
+  Array.from(document.querySelectorAll(".wrk")).forEach(x => listID = x.getAttribute('id'));
+  console.log(listID);
+}
+
+function dbInterface() {
   let value = this.getAttribute('day');
   if (db.find(x => x == value)) {
     let index = db.findIndex(x => x == value);
@@ -97,9 +103,10 @@ function klp() {
   } else {
     db.push(value);
     this.style.backgroundColor = "#ec407a";
+    if (db.length === 3) {create3x2();}
   }
 }
 
 Array.from(document.querySelectorAll(".day")).forEach(function(element) {
-  element.addEventListener('click', klp);
+  element.addEventListener('click', dbInterface);
 });
