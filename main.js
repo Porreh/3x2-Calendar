@@ -1,26 +1,24 @@
 class Calendar {
-  constructor(month, year) {
-    this.currentDate = new Date();
-    this.date = [];
-    this.html = ``;
-    this.month = (isNaN(month) || month == null) ? this.currentDate.getMonth() : month;
-    this.year = (isNaN(year) || year == null) ? this.currentDate.getFullYear() : year;
-    this.labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
-    this.labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
-                        'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
-                        'Октябрь', 'Ноябрь', 'Декабрь'];
+  constructor() {
+    this.html;
+    // this.month = (isNaN(month) || month == null) ? this.currentDate.getMonth() : month;
+    // this.year = (isNaN(year) || year == null) ? this.currentDate.getFullYear() : year;
   }
 
   generateHTML() {
-    let self = this,
-        firstDay = new Date(this.year, this.month, 0),
-        startDay = firstDay.getDay(),
-        monthLength = getDaysInMonth(this.year, this.month),
-        monthName = this.labelsMonths[this.month],
+    let currentDate = new Date(),
+        // firstDay = new Date(this.year, this.month, 0),
+        // startDay = firstDay.getDay(),
+        labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+        labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
+                        'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+                        'Октябрь', 'Ноябрь', 'Декабрь'],
+        // monthLength = getDaysInMonth(this.year, this.month),
+        // monthName = this.labelsMonths[this.month],
         html = ``;
 
     // DONE
-    function getDaysInMonth(year, month) {
+    function getDaysInMonth(month, year) {
       let maxDays = new Date(year, month, 0);
       return maxDays.getDate();
     }
@@ -65,13 +63,15 @@ class Calendar {
     
     // DONE
     function generator() {
-      genYear();
-      genWeek();
-      genDays();
+      for (let i = 0; i < 13; i++) {
+        console.log(i);
+        // genYear();
+        // genWeek();
+        // genDays();
+      }
     }
 
     generator();
-    this.currentDate = [this.month, this.year]
     this.html = html;
   }
   
@@ -79,20 +79,6 @@ class Calendar {
   render() {
     this.generateHTML();
     document.write(this.html);
-    this.clear();
-  }
-  
-  clear() {
-    this.html = null;
-    this.month = null;
-    this.year = null;
-  }
-
-  nextMonth() {
-    this.month = this.date[0] + 1;
-    this.year = this.date[1] + 1;
-    this.render();
-    console.info(`Next month`);
   }
 }
 
