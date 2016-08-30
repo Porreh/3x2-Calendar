@@ -59,5 +59,13 @@
 .month {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
+}
+
+.month_name {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
 }
