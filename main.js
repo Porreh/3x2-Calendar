@@ -103,7 +103,7 @@ function dbInterface() {
   } else {
     if (db.length === 3) {
       create3x2();
-      break;
+      return;
     }
     db.push(value);
     this.style.backgroundColor = "#ec407a";
