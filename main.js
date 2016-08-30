@@ -38,7 +38,7 @@ class Calendar {
       let day = 1;
       
       html += `<div class="days">`;
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 7; j++) {
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             if (day === today && month === currentDate.getMonth()) {
