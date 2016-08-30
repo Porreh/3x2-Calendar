@@ -89,7 +89,7 @@ calendar.render();
 function klp() {
   let db = [];
   let value = this.getAttribute('day');
-  if (db.some(value)) {
+  if (db.some(x => x == value)) {
     this.style.backgroundColor = "green";
   } else {
     db.push(value);
