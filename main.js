@@ -101,12 +101,11 @@ function dbInterface() {
     db.splice(index, 1);
     this.style.backgroundColor = "#5c6bc0";
   } else {
-    if (db.length === 3) {
-      create3x2();
-      return;
-    }
     db.push(value);
     this.style.backgroundColor = "#ec407a";
+    if (db.length === 3) {
+      create3x2();
+    }
   }
 }
 
