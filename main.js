@@ -47,9 +47,9 @@ class Calendar {
           for (let j = 0; j < 7; j++) {
             
               if (day === today) {
-                html += `<div id="${month}&${day}" class="day today">`;
+                html += `<div id="${month + 1}&${day}" class="day today">`;
               } else {
-                html += `<div id="${month}&${day}" class="day">`;
+                html += `<div id="${month + 1}&${day}" class="day">`;
               }
               
               if (day <= monthLength && (i > 0 || j >= startDay)) {
