@@ -90,7 +90,7 @@ calendar.render();
 
 function create3x2() {
   let listID;
-  Array.from(document.querySelectorAll(".wrk")).forEach(x => listID = x.getAttribute('id'));
+  Array.from(document.querySelectorAll(".wrk")).forEach(x => listID.push(x.getAttribute('id')));
   console.log(listID);
 }
 
