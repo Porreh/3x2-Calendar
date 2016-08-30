@@ -100,6 +100,8 @@ function dbInterface() {
     let index = db.findIndex(x => x == value);
     db.splice(index, 1);
     this.style.backgroundColor = "#5c6bc0";
+  } if else (db.length === 3) {
+      create3x2();
   } else {
     db.push(value);
     this.style.backgroundColor = "#ec407a";
