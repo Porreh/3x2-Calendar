@@ -78,7 +78,7 @@ class Calendar {
         html += `<div class="month">`;
         genMont(i);
         genWeek();
-        genDays();
+        genDays(i);
         html += `</div>`;
       }
       html += `</div>`;
