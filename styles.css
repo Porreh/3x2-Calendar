@@ -27,9 +27,8 @@
 .day {
     display: flex;
     margin: 3px;
-    width: 23px;
-    height: 23px;
-    padding: 0px 1px 1px 0;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     font-family: sans-serif;
     align-items: center;
