@@ -19,7 +19,7 @@ class Calendar {
     }
 
     function genYear() {
-      html += `<div><h1 class="year">${currentDate.getFullYear()}</h1></div>`;
+      html += `<div class="year"><h1>${currentDate.getFullYear()}</h1></div>`;
     }
     
     function genMont(month) {
