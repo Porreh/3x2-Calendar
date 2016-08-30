@@ -11,6 +11,7 @@
     max-width: 1224px;
     min-width: 271px;
     align-items: baseline;
+        margin: 0 auto;
 }
 
 .days {
@@ -20,10 +21,8 @@
 }
 
 .day {
-      background-color: aquamarine;
     display: flex;
-    margin: 4px;
-    padding: 0 1px 1px 0;
+    margin: 3px;
     width: 23px;
     height: 23px;
     border-radius: 50%;
@@ -56,7 +55,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: burlywood;
 }
 
 .week_days {
@@ -70,7 +68,7 @@
 .month {
   display: flex;
     flex-direction: column;
-    width: 224px;
+    width: 203px;
     margin: 16px;
 }
 
@@ -79,5 +77,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: cornflowerblue;
 }
