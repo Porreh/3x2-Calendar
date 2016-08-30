@@ -91,6 +91,8 @@ calendar.render();
 function klp() {
   let value = this.getAttribute('day');
   if (db.find(x => x == value)) {
+    let index = db.findIndex(x => x == value);
+    db.splice(index, 1);
     this.style.backgroundColor = "#5c6bc0";
   } else {
     db.push(value);
