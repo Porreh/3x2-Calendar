@@ -1,8 +1,6 @@
 class Calendar {
   constructor() {
     this.html;
-    // this.month = (isNaN(month) || month == null) ? this.currentDate.getMonth() : month;
-    // this.year = (isNaN(year) || year == null) ? this.currentDate.getFullYear() : year;
   }
 
   generateHTML() {
@@ -25,7 +23,7 @@ class Calendar {
     function genWeek() {
       html += `<div class="week">`;
       for (let i = 0; i < 7; i++) {
-        html += `<div class="week_days">${labelsDay[i]}</div>`;
+        html += `<div class="week_name">${labelsDay[i]}</div>`;
       }
       html += `</div>`;
     }
