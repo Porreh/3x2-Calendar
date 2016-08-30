@@ -61,7 +61,7 @@ class Calendar {
     }
     
     function generator() {
-      html += `<div class="calendar">`;
+      html += `<div class="calendar noselect">`;
       html += `<div class="board">`;
       for (let i = 0; i < 12; i++) {
         html += `<div class="month">`;
