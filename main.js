@@ -51,7 +51,7 @@ class Calendar {
               html += `<div id="${month + 1}&${day}" class="day">`;
             }
           } else {
-            html += `<div class="clear">`;
+            html += `<div class="day clear">`;
           }
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             html += day;
