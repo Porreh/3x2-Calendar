@@ -90,4 +90,4 @@ function jioi() {
   console.log(`done`);
 }
 
-document.getElementByClassName("day").addEventListener("click", jioi);
+document.getElementsByClassName("day").addEventListener("click", jioi);
