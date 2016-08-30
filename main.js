@@ -86,11 +86,6 @@ class Calendar {
 let calendar = new Calendar();
 calendar.render();
 
-document.querySelectorAll(".day").addEventListener("click", function(x) {
-  console.log(x);
-});
-
-
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".day").addEventListener("click", function(x) {
     console.log(x);
