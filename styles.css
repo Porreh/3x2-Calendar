@@ -24,6 +24,12 @@
 }
 
 .clear {
+  background-color: white;
+  
+}
+
+.clear:hover {
+  background-color: white;
   
 }
 
