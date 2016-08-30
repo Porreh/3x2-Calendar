@@ -88,7 +88,7 @@ calendar.render();
 
 function getID() {
   let id = this.getAttribute('id');
-  let value = document.getElementById(`#${id}`).value;
+  let value = document.getElementById(id).value;
   console.log(value);
 };
 
