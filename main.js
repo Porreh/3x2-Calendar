@@ -91,3 +91,15 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(x);
   });
 });
+
+
+let elem = document.querySelectorAll(".day");
+
+function getID() {
+    let attribute = this.getAttribute("id");
+    console.log(attribute);
+};
+
+Array.from(elem).forEach(function(element) {
+      element.addEventListener('click', getID);
+    });
