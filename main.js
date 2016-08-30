@@ -86,11 +86,10 @@ class Calendar {
 let calendar = new Calendar();
 calendar.render();
 
-let elem = document.querySelectorAll(".day");
 function getID() {
-    let attribute = this.getAttribute("id");
-    console.log(attribute);
+  let attribute = this.getAttribute("id");
+  console.log(attribute);
 };
-Array.from(elem).forEach(function(element) {
-      element.addEventListener('click', getID);
-    });
+Array.from(document.querySelectorAll(".day")).forEach(function(element) {
+  element.addEventListener('click', getID);
+});
