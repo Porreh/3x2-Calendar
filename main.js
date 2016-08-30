@@ -82,7 +82,8 @@ class Calendar {
   
   render() {
     this.generateHTML();
-    document.write(this.html);
+    console.log(this.html);
+    // document.write(this.html);
   }
 }
 
