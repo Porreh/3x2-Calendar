@@ -12,7 +12,7 @@
         display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1000px;
+    max-width: 1064px;
     min-width: 273px;
     align-items: baseline;
         margin: 0 auto;
@@ -65,13 +65,16 @@
   display: flex;
     flex-direction: column;
     width: 210px;
-    margin: 16px;
+    margin: 28px;
     color: #F5F5F5;
 }
 
 .month_name {
-    height: 24px;
+        height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #64B5F6;
+    font-family: sans-serif;
+    font-weight: bold;
 }
