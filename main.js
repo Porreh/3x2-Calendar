@@ -43,10 +43,14 @@ class Calendar {
 
       for (let i = 0; i < 7; i++) {
         for (let j = 0; j < 7; j++) {
-          if (day === today && month === currentDate.getMonth()) {
-            html += `<div id="${month + 1}&${day}" class="day today">`;
+          if (day <= monthLength && (i > 0 || j >= startDay)) {
+            if (day === today && month === currentDate.getMonth()) {
+              html += `<div id="${month + 1}&${day}" class="day today">`;
+            } else {
+              html += `<div id="${month + 1}&${day}" class="day">`;
+            }
           } else {
-            html += `<div id="${month + 1}&${day}" class="day">`;
+            html += `<div class="clear">`;
           }
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             html += day;
