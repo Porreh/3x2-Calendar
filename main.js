@@ -40,7 +40,8 @@ class Calendar {
       let monthLength = getDaysInMonth(month, currentDate.getFullYear());
       let today = currentDate.getDate();
       let day = 1;
-
+      
+      html += `<div class="days">`;
       for (let i = 0; i < 7; i++) {
         for (let j = 0; j < 7; j++) {
           if (day <= monthLength && (i > 0 || j >= startDay)) {
@@ -62,6 +63,7 @@ class Calendar {
           break;
         }
       }
+      html += `</div>`;
     }
     
     function generator() {
