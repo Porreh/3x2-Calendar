@@ -91,10 +91,10 @@ calendar.render();
 function klp() {
   let value = this.getAttribute('day');
   if (db.find(x => x == value)) {
-    this.style.backgroundColor = "green";
+    this.style.backgroundColor = "#5c6bc0";
   } else {
     db.push(value);
-    this.style.backgroundColor = "red";
+    this.style.backgroundColor = "#ec407a";
   }
 }
 
