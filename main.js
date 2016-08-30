@@ -26,7 +26,7 @@ class Calendar {
     }
     
     function genMont(month) {
-      html += `<div class="month_name">${labelsMonths[month]}<div>`;
+      html += `<div class="month_name">${labelsMonths[month]}</div>`;
     }
 
     function genWeek() {
