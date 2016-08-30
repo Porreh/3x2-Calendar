@@ -83,13 +83,14 @@ class Calendar {
   }
 }
 
+let db = [];
 let calendar = new Calendar();
+
 calendar.render();
 
 function klp() {
-  let db = [];
   let value = this.getAttribute('day');
-  if (db.some(x => x == value)) {
+  if (db.find(x => x == value)) {
     this.style.backgroundColor = "green";
   } else {
     db.push(value);
