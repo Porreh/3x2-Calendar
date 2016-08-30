@@ -89,7 +89,7 @@ let calendar = new Calendar();
 calendar.render();
 
 function create3x2() {
-  let listID = [];
+  let listID;
   Array.from(document.querySelectorAll(".wrk")).forEach(x => listID = x.getAttribute('id'));
   console.log(listID);
 }
