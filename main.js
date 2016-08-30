@@ -42,27 +42,21 @@ class Calendar {
       let day = 1;
 
       for (let i = 0; i < 7; i++) {
-        
-        
-          for (let j = 0; j < 7; j++) {
-            
-              if (day === today && month === currentDate.getMonth()) {
-                html += `<div id="${month + 1}&${day}" class="day today">`;
-              } else {
-                html += `<div id="${month + 1}&${day}" class="day">`;
-              }
-              
-              if (day <= monthLength && (i > 0 || j >= startDay)) {
-                html += day;
-                day++;
-              }
-              
-              html += `</div>`;
+        for (let j = 0; j < 7; j++) {
+          if (day === today && month === currentDate.getMonth()) {
+            html += `<div id="${month + 1}&${day}" class="day today">`;
+          } else {
+            html += `<div id="${month + 1}&${day}" class="day">`;
           }
-        
-          if (day > monthLength) {
-            break;
+          if (day <= monthLength && (i > 0 || j >= startDay)) {
+            html += day;
+            day++;
           }
+          html += `</div>`;
+        }
+        if (day > monthLength) {
+          break;
+        }
       }
     }
     
