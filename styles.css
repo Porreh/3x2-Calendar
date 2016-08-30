@@ -4,6 +4,12 @@
   transition: all 0.3s ease;
 }
 
+.days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .day {
   background-color: aquamarine;
   display: flex;
@@ -12,6 +18,10 @@
   height: 40px;
   border-radius: 50%;
   font-family: sans-serif;
+}
+
+.clear {
+  
 }
 
 .today {
