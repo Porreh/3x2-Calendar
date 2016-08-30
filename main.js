@@ -89,7 +89,7 @@ calendar.render();
 function getID() {
   let attribute = this.getAttribute("id");
   let classa = this.getAttribute("class");
-  let value = this.getAttribute("value");
+  let value = this.value;
   console.log(attribute);
   console.log(classa);
   console.log(value);
