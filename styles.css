@@ -4,6 +4,10 @@
   transition: all 0.3s ease;
 }
 
+.calendar {
+    background-color: #5C6BC0;
+}
+
 .board {
         display: flex;
     flex-wrap: wrap;
@@ -39,12 +43,12 @@
 }
 
 .clear:hover {
-  background-color: white;
+  background-color: #5c6bc0;
   
 }
 
 .today {
-  background-color: #B2DFDB;
+  background-color: #42A5F5;
 }
 
 .day:hover {
@@ -70,6 +74,7 @@
     flex-direction: column;
     width: 210px;
     margin: 16px;
+    color: #F5F5F5;
 }
 
 .month_name {
