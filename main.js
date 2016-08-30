@@ -24,7 +24,12 @@ class Calendar {
     }
 
     function genYear() {
+      let year = currentDate.getFullYear();
+      html += `<div><p class="year">${year}</p></div>`;
       html += `<table class="calendar">`;
+    }
+    
+    function genMont() {
       html += `<tr><th class="month" colspan="7">${monthName} ${self.year}</th></tr>`;
     }
 
@@ -63,11 +68,11 @@ class Calendar {
     
     // DONE
     function generator() {
+      genYear();
       for (let i = 0; i < 12; i++) {
-        console.log(i);
-        // genYear();
-        // genWeek();
-        // genDays();
+        genMont();
+        genWeek();
+        genDays();
       }
     }
 
@@ -82,19 +87,5 @@ class Calendar {
   }
 }
 
-
-
-
-
-
 let calendar = new Calendar();
 calendar.render();
-
-function nextMonth() {
-  calendar.nextMonth();
-}
-
-let button = document.createElement('button');
-document.body.appendChild(button);
-button.addEventListener("click", nextMonth);
-
