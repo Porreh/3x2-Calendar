@@ -63,7 +63,7 @@ class Calendar {
     
     // DONE
     function generator() {
-      for (let i = 0; i < 13; i++) {
+      for (let i = 0; i < 12; i++) {
         console.log(i);
         // genYear();
         // genWeek();
