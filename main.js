@@ -87,9 +87,8 @@ let calendar = new Calendar();
 calendar.render();
 
 function getID() {
-  let id = this.getAttribute('id');
-  let value = document.getElementById(id).value;
-  console.log(value);
+  let day = this.getAttribute('day');
+  console.log(day);
 };
 
 function klp() {
