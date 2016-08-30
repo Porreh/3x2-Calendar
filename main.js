@@ -99,11 +99,13 @@ function dbInterface() {
   if (db.find(x => x == value)) {
     let index = db.findIndex(x => x == value);
     db.splice(index, 1);
+    console.info(`Deleted: ${value}.`);
     this.style.backgroundColor = "#5c6bc0";
   } else if (db.length === 3) {
       console.log(`Already created.`);
   } else {
     db.push(value);
+    console.info(`Added: ${value}.`);
     this.style.backgroundColor = "#ec407a";
     if (db.length === 3) {
       create3x2();
