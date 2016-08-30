@@ -16,28 +16,25 @@ class Calendar {
         // monthName = this.labelsMonths[this.month],
         html = ``;
 
-    // DONE
     function getDaysInMonth(month, year) {
       let maxDays = new Date(year, month, 0);
       return maxDays.getDate();
     }
 
     function genYear() {
-      let year = currentDate.getFullYear();
-      html += `<div><p class="year">${year}</p></div>`;
-      html += `<table class="calendar">`;
+      html += `<div><h1 class="year">${currentDate.getFullYear()}</h1></div>`;
     }
     
     function genMont(month) {
-      html += `<tr><th class="month" colspan="7">${labelsMonths[month]}</th></tr>`;
+      html += `<div class="month_name">${labelsMonths[month]}<div>`;
     }
 
     function genWeek() {
-      html += `<tr>`;
+      html += `<div class="week">`;
       for (let i = 0; i < 7; i++) {
-        html += `<td class="week">${labelsDay[i]}</td>`;
+        html += `<div class="week_days">${labelsDay[i]}</div>`;
       }
-      html += `</tr>`;
+      html += `</div>`;
     }
 
     function genDays() { // REDO
@@ -64,24 +61,25 @@ class Calendar {
       //     html += `</tr><tr>`;
       //   }
       // }
-      html += `</tr>123<tr>`;
     }
     
-    // DONE
     function generator() {
       genYear();
+      html += `<div class="calendar">`;
       for (let i = 0; i < 12; i++) {
+        html += `<div class="month">`;
         genMont(i);
         genWeek();
         genDays();
+        html += `</div>`;
       }
+      html += `</div>`;
     }
 
     generator();
     this.html = html;
   }
   
-  // DONE
   render() {
     this.generateHTML();
     document.write(this.html);
