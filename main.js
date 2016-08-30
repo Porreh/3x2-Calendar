@@ -88,13 +88,22 @@ calendar.render();
 
 function getID() {
   let attribute = this.getAttribute("id");
-  console.log(this);
+  let classa = this.getAttribute("class");
+  let value = this.getAttribute("value");
+  console.log(attribute);
+  console.log(classa);
+  console.log(value);
 };
 
 function klp() {
-  // let attribute = this.getAttribute("id");
   let db = [];
-  
+  let value = this.getAttribute("value");
+  if (db.some(value)) {
+    this.style.backgroundColor = "green";
+  } else {
+    db.push(value);
+    this.style.backgroundColor = "red";
+  }
 }
 
 Array.from(document.querySelectorAll(".day")).forEach(function(element) {
