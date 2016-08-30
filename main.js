@@ -17,10 +17,6 @@ class Calendar {
       let maxDays = new Date(year, month, 0);
       return maxDays.getDate();
     }
-
-    function genYear() {
-      html += `<div class="year"><h1>${currentDate.getFullYear()}</h1></div>`;
-    }
     
     function genMont(month) {
       html += `<div class="month_name">${labelsMonths[month]}</div>`;
@@ -68,7 +64,6 @@ class Calendar {
     
     function generator() {
       html += `<div class="calendar">`;
-      genYear();
       html += `<div class="board">`;
       for (let i = 0; i < 12; i++) {
         html += `<div class="month">`;
