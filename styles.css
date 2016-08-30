@@ -12,12 +12,15 @@
 
 .day {
   background-color: aquamarine;
-  display: flex;
-  margin: 1px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-family: sans-serif;
+    display: flex;
+    margin: 5px;
+    padding: 0 1px 1px 0;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
 }
 
 .clear {
@@ -50,5 +53,4 @@
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 300px;
 }
