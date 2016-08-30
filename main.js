@@ -87,8 +87,8 @@ let calendar = new Calendar();
 calendar.render();
 
 function getID() {
-  let id = this.getAttribute("id");
-  let value = document.querySelector(id).value;
+  let id = this.getAttribute('id');
+  let value = document.querySelector('#id').value;
   console.log(value);
 };
 
