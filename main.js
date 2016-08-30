@@ -86,14 +86,9 @@ class Calendar {
 let calendar = new Calendar();
 calendar.render();
 
-function getID() {
-  let day = this.getAttribute('day');
-  console.log(day);
-};
-
 function klp() {
   let db = [];
-  let value = this.getAttribute("value");
+  let value = this.getAttribute('day');
   if (db.some(value)) {
     this.style.backgroundColor = "green";
   } else {
@@ -103,5 +98,5 @@ function klp() {
 }
 
 Array.from(document.querySelectorAll(".day")).forEach(function(element) {
-  element.addEventListener('click', getID);
+  element.addEventListener('click', klp);
 });
