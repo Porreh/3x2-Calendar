@@ -40,9 +40,9 @@ class Calendar {
         for (let j = 0; j < 7; j++) {
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             if (day === today && month === currentDate.getMonth()) {
-              html += `<div id="${month + 1}&${day}" class="day today">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day today">`;
             } else {
-              html += `<div id="${month + 1}&${day}" class="day">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day">`;
             }
           } else {
             html += `<div class="day clear">`;
