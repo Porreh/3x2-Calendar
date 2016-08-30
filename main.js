@@ -69,6 +69,7 @@ class Calendar {
     function generator() {
       html += `<div class="calendar">`;
       genYear();
+      html += `<div class="board">`;
       for (let i = 0; i < 12; i++) {
         html += `<div class="month">`;
         genMont(i);
@@ -76,7 +77,7 @@ class Calendar {
         genDays(i);
         html += `</div>`;
       }
-      html += `</div>`;
+      html += `</div></div>`;
     }
 
     generator();
