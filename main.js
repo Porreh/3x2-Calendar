@@ -85,3 +85,9 @@ class Calendar {
 
 let calendar = new Calendar();
 calendar.render();
+
+function jioi() {
+  console.log(`done`);
+}
+
+document.getElementByClassName("day").addEventListener("click", jioi);
