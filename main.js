@@ -13,7 +13,6 @@ class Calendar {
         labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
                         'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
                         'Октябрь', 'Ноябрь', 'Декабрь'],
-        // monthLength = getDaysInMonth(this.year, this.month),
         // monthName = this.labelsMonths[this.month],
         html = ``;
 
@@ -29,48 +28,50 @@ class Calendar {
       html += `<table class="calendar">`;
     }
     
-    function genMont() {
-      html += `<tr><th class="month" colspan="7">${monthName} ${self.year}</th></tr>`;
+    function genMont(month) {
+      html += `<tr><th class="month" colspan="7">${labelsMonths[month]}</th></tr>`;
     }
 
     function genWeek() {
       html += `<tr>`;
-      for (let i = 0; i <= 6; i++) {
-        html += `<td class="week">${self.labelsDay[i]}</td>`;
+      for (let i = 0; i < 7; i++) {
+        html += `<td class="week">${labelsDay[i]}</td>`;
       }
       html += `</tr>`;
     }
 
     function genDays() { // REDO
-      let today = self.currentDate.getDate();
-      let day = 1;
+      // let monthLength = getDaysInMonth(),
+      // let today = currentDate.getDate();
+      // let day = 1;
 
-      for (let i = 0; i < 9; i++) {
-        for (let j = 0; j <= 6; j++) {
-          if (today === day) {
-            html += `<td class="day today">`;
-          } else {
-            html += `<td class="day">`;
-          }
-          if (day <= monthLength && (i > 0 || j >= startDay)) {
-            html += day;
-            day++;
-          }
-          html += `</td>`;
-        }
-        if (day > monthLength) {
-          break;
-        } else {
-          html += `</tr><tr>`;
-        }
-      }
+      // for (let i = 0; i < 9; i++) {
+      //   for (let j = 0; j <= 6; j++) {
+      //     if (today === day) {
+      //       html += `<td class="day today">`;
+      //     } else {
+      //       html += `<td class="day">`;
+      //     }
+      //     if (day <= monthLength && (i > 0 || j >= startDay)) {
+      //       html += day;
+      //       day++;
+      //     }
+      //     html += `</td>`;
+      //   }
+      //   if (day > monthLength) {
+      //     break;
+      //   } else {
+      //     html += `</tr><tr>`;
+      //   }
+      // }
+      html += `</tr>123<tr>`;
     }
     
     // DONE
     function generator() {
       genYear();
       for (let i = 0; i < 12; i++) {
-        genMont();
+        genMont(i);
         genWeek();
         genDays();
       }
