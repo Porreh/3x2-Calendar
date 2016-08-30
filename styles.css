@@ -1,38 +1,33 @@
-*{
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
 }
-
 .noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 .calendar {
     background-color: #5C6BC0;
 }
-
 .board {
-        display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1064px;
     min-width: 273px;
     align-items: baseline;
-        margin: 0 auto;
+    margin: 0 auto;
 }
-
 .days {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 .day {
     display: flex;
     margin: 3px;
@@ -43,44 +38,37 @@
     align-items: center;
     justify-content: center;
     font-size: 12px;
-        cursor: pointer;
+    cursor: pointer;
 }
-
 .clear {
-  background-color: #5c6bc0;
-  
+    background-color: #5c6bc0;
 }
-
 .today {
-  background-color: #42A5F5;
+    background-color: #42A5F5;
 }
-
 .week {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-family: sans-serif;
 }
-
 .week_name {
-  display: flex;
+    display: flex;
     align-items: center;
     width: 24px;
     height: 24px;
     justify-content: center;
     cursor: default;
 }
-
 .month {
-  display: flex;
+    display: flex;
     flex-direction: column;
     width: 210px;
     margin: 28px;
     color: #F5F5F5;
 }
-
 .month_name {
-        height: 48px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
