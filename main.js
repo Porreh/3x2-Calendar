@@ -41,7 +41,7 @@ class Calendar {
       let today = currentDate.getDate();
       let day = 1;
 
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 7; i++) {
         
         
           for (let j = 0; j < 7; j++) {
@@ -59,15 +59,10 @@ class Calendar {
               
               html += `</div>`;
           }
-          
-          
+        
           if (day > monthLength) {
             break;
-          } else {
-            html += `</tr><tr>`;
           }
-          
-          
       }
     }
     
