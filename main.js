@@ -94,6 +94,37 @@ function create3x2() {
   let listID = [];
   Array.from(document.querySelectorAll(".wrk"))
     .forEach(x => listID.push(x.getAttribute('id')));
+  
+  function nightShift() {
+    let x;
+    let tmpArray = db;
+    function cvb(ndx) {
+      
+      tmpArray.forEach(function(dbElement) {
+        let index = listID.findIndex(x => dbElement == x);
+        x.push(listID[index]);
+        downGrade(index - 15);
+      });
+    }
+    
+    function downGrade(index) {
+      if(index < 0) {
+        return;
+      }
+      x.push(listID[index]);
+      downGrade(index - 15);
+    }
+    
+    console.dir(x);
+  }
+  
+  function dayShift() {
+    
+  }
+  
+  function middleShift() {
+    
+  }
 }
 
 function dbInterface() {
