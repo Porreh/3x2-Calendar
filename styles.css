@@ -126,15 +126,15 @@ body {
     font-weight: bold;
     cursor: default;
 }
-.night {
+.nightshift {
     background-color: #5E35B1;
     color: #F5F5F5;
 }
-.day {
+.dayshift {
     background-color: #FDD835;
     color: #4E342E;
 }
-.middle {
+.middleshift {
     background-color: #6D4C41;
     color: #F5F5F5;
 }
