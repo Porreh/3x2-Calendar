@@ -95,23 +95,30 @@ function create3x2() {
     .forEach(x => listID.push(x.getAttribute('id')));
   
   function nightShift() {
-    let wert =[];
-    function cvb() {
+    let shiftArray =[];
+    function start() {
       db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
-        downGrade(index - 15);
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15);
+        shiftArray.reverse();
+        gradeUp(index + 15);
       });
-    }
-    
-    function downGrade(index) {
-      if(index < 0) {
-        return;
+      
+      function gradeDown(index) {
+        if(index < 0) return;
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15);
       }
-      wert.push(listID[index]);
-      downGrade(index - 15);
+      
+      function gradeUp(index) {
+        if(index > listID.length) return;
+        shiftArray.push(listID[index]);
+        gradeUp(index + 15);
+      }
     }
-    cvb();
-    console.dir(wert);
+    start();
+    console.dir(shiftArray);
   }
   
   function dayShift() {
