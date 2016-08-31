@@ -95,11 +95,9 @@ function create3x2() {
     .forEach(x => listID.push(x.getAttribute('id')));
   
   function nightShift() {
-    let x;
-    let tmpArray = db;
-    function cvb(ndx) {
-      
-      tmpArray.forEach(function(dbElement) {
+    let x =[];
+    function cvb() {
+      db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
         x.push(listID[index]);
         downGrade(index - 15);
