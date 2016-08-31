@@ -131,10 +131,12 @@ function create3x2() {
   
   function start() {
     listID.forEach(function(id) {
-      document.getElementById(id).classList.remove('nightshift');
-      document.getElementById(id).classList.remove('dayshift');
-      document.getElementById(id).classList.remove('middleshift');
+      let classes = ['nightshift', 'dayshift', 'middleshift'];
+      for (let i = 0; i < classes.length; i++) {
+        document.getElementById(id).classList.remove(classes[i]);
+      }
     });
+    
     nightShift().forEach(function(id) {
       document.getElementById(id).classList.add('nightshift');
     });
