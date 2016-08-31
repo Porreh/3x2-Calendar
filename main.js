@@ -80,7 +80,9 @@ class Calendar {
 
   render(element) {
     this.generateHTML();
-    element.write(this.html);
+    //document.write(this.html);
+    element.innerHTML(this.html);
+    
   }
 }
 
