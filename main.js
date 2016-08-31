@@ -122,11 +122,67 @@ function create3x2() {
   }
   
   function dayShift() {
-    
+    let shiftArray =[];
+    function countDay() {
+      db.forEach(function(dbElement) {
+        let index = listID.findIndex(x => dbElement == x);
+        if (index - 5) {
+          index += 10;
+        } else {
+          index -= 5;
+        }
+        shiftArray.push(listID[index - 5]);
+        gradeDown(index - 15);
+        shiftArray.reverse();
+        gradeUp(index + 15);
+      });
+      
+      function gradeDown(index) {
+        if(index < 0) return;
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15);
+      }
+      
+      function gradeUp(index) {
+        if(index > listID.length) return;
+        shiftArray.push(listID[index]);
+        gradeUp(index + 15);
+      }
+    }
+    countDay();
+    return shiftArray;
   }
   
   function middleShift() {
-    
+    let shiftArray =[];
+    function countMiddle() {
+      db.forEach(function(dbElement) {
+        let index = listID.findIndex(x => dbElement == x);
+        if (index - 10) {
+          index += 5;
+        } else {
+          index -= 5;
+        }
+        shiftArray.push(listID[index - 5]);
+        gradeDown(index - 15);
+        shiftArray.reverse();
+        gradeUp(index + 15);
+      });
+      
+      function gradeDown(index) {
+        if(index < 0) return;
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15);
+      }
+      
+      function gradeUp(index) {
+        if(index > listID.length) return;
+        shiftArray.push(listID[index]);
+        gradeUp(index + 15);
+      }
+    }
+    countMiddle();
+    return shiftArray;
   }
   
   function start() {
