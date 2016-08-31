@@ -132,7 +132,7 @@ function dbInterface() {
   let value = this.getAttribute('day');
   let id = this.getAttribute('id');
   if (db.find(x => id == x)) {
-    let index = db.findIndex(x => x == id);
+    let index = db.findIndex(x => id == x);
     db.splice(index, 1);
     console.info(`Deleted: ${value}.`);
     this.style.backgroundColor = "#5c6bc0";
