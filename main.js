@@ -80,7 +80,6 @@ class Calendar {
 
   render(element) {
     this.generateHTML();
-    //document.write(this.html);
     document.querySelector(element).innerHTML = this.html;
   }
 }
@@ -125,6 +124,8 @@ function create3x2() {
   function middleShift() {
     
   }
+  
+  nightShift();
 }
 
 function dbInterface() {
