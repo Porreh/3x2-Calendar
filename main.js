@@ -98,6 +98,7 @@ function create3x2() {
 
 function dbInterface() {
   let value = this.getAttribute('day');
+  let id = this.getAttribute('id');
   if (db.find(x => x == value)) {
     let index = db.findIndex(x => x == value);
     db.splice(index, 1);
@@ -106,7 +107,7 @@ function dbInterface() {
   } else if (db.length === 3) {
     console.log(`Already created.`);
   } else {
-    db.push(value);
+    db.push(id);
     console.info(`Added: ${value}.`);
     this.style.backgroundColor = "#ec407a";
     if (db.length === 3) {
