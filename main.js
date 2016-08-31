@@ -130,6 +130,11 @@ function create3x2() {
   }
   
   function start() {
+    listID.forEach(function(id) {
+      document.getElementById(id).classList.remove('nightshift');
+      document.getElementById(id).classList.remove('dayshift');
+      document.getElementById(id).classList.remove('middleshift');
+    });
     nightShift().forEach(function(id) {
       document.getElementById(id).classList.add('nightshift');
     });
