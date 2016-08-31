@@ -143,7 +143,7 @@ function dbInterface() {
     console.info(`Added: ${value}.`);
     this.style.backgroundColor = "#ec407a";
     if (db.length === 3) {
-      create3x2();
+      //create3x2();
     }
   }
 }
