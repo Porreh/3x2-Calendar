@@ -131,8 +131,8 @@ function create3x2() {
 function dbInterface() {
   let value = this.getAttribute('day');
   let id = this.getAttribute('id');
-  if (db.find(x => value == x)) {
-    let index = db.findIndex(x => x == value);
+  if (db.find(x => id == x)) {
+    let index = db.findIndex(x => x == id);
     db.splice(index, 1);
     console.info(`Deleted: ${value}.`);
     this.style.backgroundColor = "#5c6bc0";
