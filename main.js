@@ -139,6 +139,7 @@ function create3x2() {
     });
     clean();
   }
+  start();
 }
 
 function dbInterface() {
