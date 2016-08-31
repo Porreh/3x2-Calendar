@@ -81,7 +81,7 @@ class Calendar {
   render(element) {
     this.generateHTML();
     //document.write(this.html);
-    element.innerHTML(this.html);
+    document.querySelector("${element}").innerHTML(this.html);
     
   }
 }
@@ -89,7 +89,7 @@ class Calendar {
 let db = [];
 let calendar = new Calendar();
 
-calendar.render(document.querySelector(".container"));
+calendar.render(`.container`);
 
 function create3x2() {
   let listID = [];
