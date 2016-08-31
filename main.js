@@ -99,8 +99,6 @@ function create3x2() {
     function cvb() {
       db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
-        wert.push(listID[index]);
-        console.lo
         downGrade(index - 15);
       });
     }
