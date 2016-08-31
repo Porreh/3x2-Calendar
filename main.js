@@ -112,7 +112,7 @@ function create3x2() {
       wert.push(listID[index]);
       downGrade(index - 15);
     }
-    
+    cvb();
     console.dir(wert);
   }
   
