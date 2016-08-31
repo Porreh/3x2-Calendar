@@ -78,16 +78,16 @@ class Calendar {
     this.html = html;
   }
 
-  render() {
+  render(element) {
     this.generateHTML();
-    document.write(this.html);
+    element.write(this.html);
   }
 }
 
 let db = [];
 let calendar = new Calendar();
 
-calendar.render();
+calendar.render(document.querySelector(".container"));
 
 function create3x2() {
   let listID = [];
