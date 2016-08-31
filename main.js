@@ -81,7 +81,7 @@ class Calendar {
   render(element) {
     this.generateHTML();
     //document.write(this.html);
-    document.querySelector("${element}").innerHTML(this.html);
+    document.querySelector(element).innerHTML(this.html);
     
   }
 }
