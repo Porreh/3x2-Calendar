@@ -129,15 +129,10 @@ function create3x2() {
     
   }
   
-  function clean() {
-    db = [];
-  }
-  
   function start() {
     nightShift().forEach(function(id) {
       document.getElementById(id).classList.add('nightshift');
     });
-    clean();
   }
   start();
 }
