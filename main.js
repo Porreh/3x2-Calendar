@@ -96,7 +96,7 @@ function create3x2() {
   
   function nightShift() {
     let shiftArray =[];
-    function start() {
+    function countNight() {
       db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
         shiftArray.push(listID[index]);
@@ -117,8 +117,8 @@ function create3x2() {
         gradeUp(index + 15);
       }
     }
-    start();
-    console.dir(shiftArray);
+    countNight();
+    return shiftArray;
   }
   
   function dayShift() {
@@ -129,7 +129,16 @@ function create3x2() {
     
   }
   
-  nightShift();
+  function clean() {
+    db = [];
+  }
+  
+  function start() {
+    nightShift().forEach(function(id) {
+      document.querySelector(`#${id}`).style.backgroundColor = "#673ab7";
+    });
+    clean();
+  }
 }
 
 function dbInterface() {
