@@ -135,7 +135,7 @@ function create3x2() {
   
   function start() {
     nightShift().forEach(function(id) {
-      document.getElementById(id).classList.add('night');
+      document.getElementById(id).classList.add('nightshift');
     });
     clean();
   }
