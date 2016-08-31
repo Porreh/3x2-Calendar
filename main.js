@@ -150,13 +150,13 @@ function dbInterface() {
     db.splice(index, 1);
     console.info(`Deleted: ${value}.`);
     this.style.backgroundColor = "#5c6bc0";
-  } else if (db.length === 3) {
+  } else if (db.length == 3) {
     console.log(`Already created.`);
   } else {
     db.push(id);
     console.info(`Added: ${value}.`);
     this.style.backgroundColor = "#ec407a";
-    if (db.length === 3) {
+    if (db.length == 3) {
       create3x2();
     }
   }
