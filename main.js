@@ -149,13 +149,13 @@ function dbInterface() {
     let index = db.findIndex(x => id == x);
     db.splice(index, 1);
     console.info(`Deleted: ${value}.`);
-    this.style.backgroundColor = "#5c6bc0";
+    this.classList.remove('selection');
   } else if (db.length == 3) {
     console.log(`Already created.`);
   } else {
     db.push(id);
     console.info(`Added: ${value}.`);
-    this.style.backgroundColor = "#ec407a";
+    this.classList.add('selection');
     if (db.length == 3) {
       create3x2();
     }
