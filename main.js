@@ -196,6 +196,12 @@ function create3x2() {
     nightShift().forEach(function(id) {
       document.getElementById(id).classList.add('nightshift');
     });
+    dayShift().forEach(function(id) {
+      document.getElementById(id).classList.add('dayshift');
+    });
+    middleShift().forEach(function(id) {
+      document.getElementById(id).classList.add('middleshift');
+    });
   }
   start();
 }
