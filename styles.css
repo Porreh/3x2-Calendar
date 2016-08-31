@@ -4,6 +4,13 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+body {    
+    background-color: #5c6bc0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
