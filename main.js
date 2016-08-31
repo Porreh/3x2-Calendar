@@ -135,7 +135,7 @@ function create3x2() {
   
   function start() {
     nightShift().forEach(function(id) {
-      document.getElementById(id).style.backgroundColor = "#673ab7";
+      document.getElementById(id).classList.add('night');
     });
     clean();
   }
