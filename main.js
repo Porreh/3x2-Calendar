@@ -230,3 +230,5 @@ Array.from(document.querySelectorAll(".s"))
   .forEach(function (element) {
     element.addEventListener('click', dbInterface);
   });
+  
+console.dir(Array.from(document.querySelectorAll(".s")));
