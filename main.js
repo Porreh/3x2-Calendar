@@ -113,8 +113,7 @@ class Shift {
     }
 
     function reShift(prev, next) {
-      let tmpArray = [];
-      let shiftArray = [].concat.apply([], tmpArray);
+      let shiftArray = [];
       db.forEach(function (dbElement) {
         let index = listID.findIndex(x => dbElement == x);
         if ((index - prev) < 0) {
@@ -122,11 +121,11 @@ class Shift {
         } else {
           index -= prev;
         }
-        tmpArray.push(listID[index]);
-        tmpArray.push(gradeDown(index - 15));
-        tmpArray.push(gradeUp(index + 15));
-        console.log(tmpArray);
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15).forEach(id => shiftArray.push(id));
+        gradeUp(index + 15).forEach(id => shiftArray.push(id));
       });
+      console.log(shiftArray);
       return shiftArray;
     }
 
