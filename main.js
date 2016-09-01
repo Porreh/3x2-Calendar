@@ -101,7 +101,6 @@ function create3x2() {
         let index = listID.findIndex(x => dbElement == x);
         shiftArray.push(listID[index]);
         gradeDown(index - 15);
-        shiftArray.reverse();
         gradeUp(index + 15);
       });
       
@@ -133,7 +132,6 @@ function create3x2() {
         }
         shiftArray.push(listID[index]);
         gradeDown(index - 15);
-        shiftArray.reverse();
         gradeUp(index + 15);
       });
       
@@ -165,7 +163,6 @@ function create3x2() {
         }
         shiftArray.push(listID[index]);
         gradeDown(index - 15);
-        shiftArray.reverse();
         gradeUp(index + 15);
       });
       
