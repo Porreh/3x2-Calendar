@@ -32,8 +32,8 @@ class Calendar {
     function genDays(month) {
       let firstDay = new Date(currentDate.getFullYear(), month, 0);
       let startDay = firstDay.getDay();
-      let monthLength = getDaysInMonth(month, currentDate.getFullYear());
-      console.log(month);
+      let monthLength = getDaysInMonth(month + 1, currentDate.getFullYear());
+      console.log(monthLength);
       let today = currentDate.getDate();
       let day = 1;
 
