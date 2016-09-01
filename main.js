@@ -117,6 +117,7 @@ function create3x2() {
       }
     }
     countNight();
+    console.dir(shiftArray);
     return shiftArray;
   }
   
@@ -148,6 +149,7 @@ function create3x2() {
       }
     }
     countDay();
+    console.dir(shiftArray);
     return shiftArray;
   }
   
@@ -194,9 +196,9 @@ function create3x2() {
     nightShift().forEach(function(id) {
       document.getElementById(id).classList.add('nightshift');
     });
-    // dayShift().forEach(function(id) {
-    //   document.getElementById(id).classList.add('dayshift');
-    // });
+    dayShift().forEach(function(id) {
+      document.getElementById(id).classList.add('dayshift');
+    });
     middleShift().forEach(function(id) {
       document.getElementById(id).classList.add('middleshift');
     });
@@ -227,10 +229,4 @@ function dbInterface() {
 Array.from(document.querySelectorAll(".s"))
   .forEach(function (element) {
     element.addEventListener('click', dbInterface);
-  });
-  
-Array.from(document.querySelectorAll(".s"))
-  .forEach(function (x) {
-    let id = x.getAttribute('id');
-    console.log(id);
   });
