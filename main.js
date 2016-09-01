@@ -86,7 +86,7 @@ class Calendar {
 
 class Shift {
   constructor() {
-    let self = this;
+    self = this;
   }
 
   createShift() {
