@@ -121,8 +121,8 @@ class Shift {
         } else {
           index -= prev;
         }
-        shiftArray.push(listID[index])
-          .concat(gradeDown(index - 15), gradeUp(index + 15));
+        shiftArray.push(listID[index]);
+        shiftArray.concat(gradeDown(index - 15), gradeUp(index + 15));
       });
       return shiftArray;
     }
