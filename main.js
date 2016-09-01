@@ -95,15 +95,25 @@ class Shift {
       .forEach(x => listID.push(x.getAttribute('id')));
 
     function gradeDown(index) {
-      if (index < 0) return;
-      gradeDown(index - 15);
-      return listID[index];
+      let tmpArray = [];
+      while (index >= 0) {
+        tmp.push(listID[index]);
+        index -= 15;
+      }
+      return tmpArray;
     }
 
     function gradeUp(index) {
       if (index > listID.length - 1) return;
       gradeUp(index + 15);
       return listID[index];
+      
+      let tmpArray = [];
+      while (index < listID.length--) {
+        tmp.push(listID[index]);
+        index += 15;
+      }
+      return tmpArray;
     }
 
     function reShift(prev, next) {
@@ -115,9 +125,7 @@ class Shift {
         } else {
           index -= prev;
         }
-        shiftArray.push(listID[index]);
-        shiftArray.push(gradeDown(index - 15));
-        shiftArray.push(gradeUp(index + 15));
+        shiftArray.push(listID[index]).concat(gradeDown(index - 15), gradeUp(index + 15));
       });
       return shiftArray;
     }
