@@ -131,7 +131,7 @@ function create3x2() {
         } else {
           index -= 5;
         }
-        shiftArray.push(listID[index - 5]);
+        shiftArray.push(listID[index]);
         gradeDown(index - 15);
         shiftArray.reverse();
         gradeUp(index + 15);
