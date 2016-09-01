@@ -33,6 +33,7 @@ class Calendar {
       let firstDay = new Date(currentDate.getFullYear(), month, 0);
       let startDay = firstDay.getDay();
       let monthLength = getDaysInMonth(month, currentDate.getFullYear());
+      console.log(month);
       let today = currentDate.getDate();
       let day = 1;
 
