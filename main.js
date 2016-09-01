@@ -121,10 +121,7 @@ class Shift {
         } else {
           index -= prev;
         }
-        shiftArray.push(listID[index]);
-        let gradeD = gradeDown(index - 15);
-        let gradeU = gradeUp(index + 15);
-        shiftArray.concat(gradeD, gradeU);
+        shiftArray.push([].concat(listID[index], gradeDown(index - 15), gradeUp(index + 15)));
       });
       console.log(shiftArray);
       return shiftArray;
