@@ -125,7 +125,6 @@ class Shift {
         gradeDown(index - 15).forEach(id => shiftArray.push(id));
         gradeUp(index + 15).forEach(id => shiftArray.push(id));
       });
-      console.log(shiftArray);
       return shiftArray;
     }
 
