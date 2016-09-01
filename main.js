@@ -233,7 +233,7 @@ Array.from(document.querySelectorAll(".day"))
   });
   
 Array.from(document.querySelectorAll(".day"))
-  .forEach(function () {
-    let id = this.getAttribute('id');
+  .forEach(function (x) {
+    let id = x.getAttribute('id');
     console.log(id);
   });
