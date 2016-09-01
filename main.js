@@ -90,7 +90,7 @@ class Shift {
   }
 
   createShift() {
-    let listID;
+    let listID = [];
     Array.from(document.querySelectorAll(".s"))
       .forEach(x => listID.push(x.getAttribute('id')));
 
