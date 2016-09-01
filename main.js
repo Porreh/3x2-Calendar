@@ -122,7 +122,9 @@ class Shift {
         } else {
           index -= prev;
         }
-        tmpArray.push(listID[index], gradeDown(index - 15), gradeUp(index + 15));
+        tmpArray.push(listID[index]);
+        tmpArray.push(gradeDown(index - 15));
+        tmpArray.push(gradeUp(index + 15));
       });
       return shiftArray;
     }
