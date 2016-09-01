@@ -104,10 +104,6 @@ class Shift {
     }
 
     function gradeUp(index) {
-      if (index > listID.length - 1) return;
-      gradeUp(index + 15);
-      return listID[index];
-
       let tmpArray = [];
       while (index < listID.length--) {
         tmp.push(listID[index]);
