@@ -107,7 +107,7 @@ class Shift {
       if (index > listID.length - 1) return;
       gradeUp(index + 15);
       return listID[index];
-      
+
       let tmpArray = [];
       while (index < listID.length--) {
         tmp.push(listID[index]);
@@ -125,7 +125,8 @@ class Shift {
         } else {
           index -= prev;
         }
-        shiftArray.push(listID[index]).concat(gradeDown(index - 15), gradeUp(index + 15));
+        shiftArray.push(listID[index])
+          .concat(gradeDown(index - 15), gradeUp(index + 15));
       });
       return shiftArray;
     }
