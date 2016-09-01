@@ -33,7 +33,6 @@ class Calendar {
       let firstDay = new Date(currentDate.getFullYear(), month, 0);
       let startDay = firstDay.getDay();
       let monthLength = getDaysInMonth(month + 1, currentDate.getFullYear());
-      console.log(monthLength);
       let today = currentDate.getDate();
       let day = 1;
 
@@ -232,4 +231,4 @@ Array.from(document.querySelectorAll(".s"))
     element.addEventListener('click', dbInterface);
   });
   
-console.dir(Array.from(document.querySelectorAll(".s")));
+console.dir(`All Elements: ${Array.from(document.querySelectorAll(".s"))}`);
