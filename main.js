@@ -96,14 +96,14 @@ class Shift {
 
     function gradeDown(index) {
       if (index < 0) return;
-      this.shiftArray.push(listID[index]);
       gradeDown(index - 15);
+      return listID[index];
     }
 
     function gradeUp(index) {
       if (index > listID.length - 1) return;
-      this.shiftArray.push(listID[index]);
       gradeUp(index + 15);
+      return listID[index];
     }
 
     function reShift(prev, next) {
@@ -116,8 +116,8 @@ class Shift {
           index -= prev;
         }
         shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-        gradeUp(index + 15);
+        shiftArray.push(gradeDown(index - 15));
+        shiftArray.push(gradeUp(index + 15));
       });
       return shiftArray;
     }
