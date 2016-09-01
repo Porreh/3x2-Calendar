@@ -91,7 +91,7 @@ calendar.render(`.container`);
 
 function create3x2() {
   let listID = [];
-  Array.from(document.querySelectorAll(".wrk"))
+  Array.from(document.querySelectorAll(".s"))
     .forEach(x => listID.push(x.getAttribute('id')));
   
   function nightShift() {
