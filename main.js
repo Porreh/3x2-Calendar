@@ -164,7 +164,7 @@ function create3x2() {
         } else {
           index -= 5;
         }
-        shiftArray.push(listID[index - 5]);
+        shiftArray.push(listID[index]);
         gradeDown(index - 15);
         shiftArray.reverse();
         gradeUp(index + 15);
@@ -200,9 +200,9 @@ function create3x2() {
     dayShift().forEach(function(id) {
       document.getElementById(id).classList.add('dayshift');
     });
-    //middleShift().forEach(function(id) {
-    //  document.getElementById(id).classList.add('middleshift');
-    //});
+    middleShift().forEach(function(id) {
+      document.getElementById(id).classList.add('middleshift');
+    });
   }
   start();
 }
