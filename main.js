@@ -114,7 +114,7 @@ class Shift {
 
     function reShift(prev, next) {
       let tmpArray;
-      let shiftArray = [].concat(...tmpArray);
+      let shiftArray = [].concat.apply([], tmpArray);
       db.forEach(function (dbElement) {
         let index = listID.findIndex(x => dbElement == x);
         if ((index - prev) < 0) {
