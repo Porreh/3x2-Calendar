@@ -151,6 +151,7 @@ class Shift {
   }
 
   watch() {
+    let self = this;
     let value = this.getAttribute('day');
     let id = this.getAttribute('id');
     if (db.find(x => id == x)) {
@@ -165,7 +166,7 @@ class Shift {
       console.info(`Added: ${value}.`);
       this.classList.add('selection');
       if (db.length == 3) {
-        this.createShift();
+        self.createShift();
       }
     }
   }
