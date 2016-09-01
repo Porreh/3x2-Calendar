@@ -7,9 +7,8 @@ class Calendar {
     let currentDate = new Date(),
       labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
       labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
-        'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
-        'Октябрь', 'Ноябрь', 'Декабрь'
-      ],
+                        'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+                        'Октябрь', 'Ноябрь', 'Декабрь'],
       html = ``;
 
     function getDaysInMonth(month, year) {
@@ -80,155 +79,105 @@ class Calendar {
 
   render(element) {
     this.generateHTML();
-    document.querySelector(element).innerHTML = this.html;
+    document.querySelector(element)
+      .innerHTML = this.html;
+  }
+}
+
+class Shift {
+  constructor() {
+
+  }
+
+  createShift() {
+    let listID;
+    Array.from(document.querySelectorAll(".s"))
+      .forEach(x => listID.push(x.getAttribute('id')));
+
+    function gradeDown(index) {
+      if (index < 0) return;
+      this.shiftArray.push(listID[index]);
+      gradeDown(index - 15);
+    }
+
+    function gradeUp(index) {
+      if (index > listID.length - 1) return;
+      this.shiftArray.push(listID[index]);
+      gradeUp(index + 15);
+    }
+
+    function reShift(prev, next) {
+      let shiftArray = [];
+      db.forEach(function (dbElement) {
+        let index = listID.findIndex(x => dbElement == x);
+        if ((index - prev) < 0) {
+          index += next;
+        } else {
+          index -= prev;
+        }
+        shiftArray.push(listID[index]);
+        gradeDown(index - 15);
+        gradeUp(index + 15);
+      });
+      return shiftArray;
+    }
+
+    function run() {
+      let classes = ['nightshift', 'dayshift', 'middleshift'];
+      listID.forEach(function (id) {
+        for (let i = 0; i < classes.length; i++) {
+          document.getElementById(id)
+            .classList.remove(classes[i]);
+        }
+      });
+
+      reShift(15, 15)
+        .forEach(function (id) {
+          document.getElementById(id)
+            .classList.add(classes[0]);
+        });
+      reShift(5, 10)
+        .forEach(function (id) {
+          document.getElementById(id)
+            .classList.add(classes[1]);
+        });
+      reShift(10, 5)
+        .forEach(function (id) {
+          document.getElementById(id)
+            .classList.add(classes[2]);
+        });
+    }
+    run();
+  }
+
+  watch() {
+    let value = this.getAttribute('day');
+    let id = this.getAttribute('id');
+    if (db.find(x => id == x)) {
+      let index = db.findIndex(x => id == x);
+      db.splice(index, 1);
+      console.info(`Deleted: ${value}.`);
+      this.classList.remove('selection');
+    } else if (db.length == 3) {
+      console.log(`Already created.`);
+    } else {
+      db.push(id);
+      console.info(`Added: ${value}.`);
+      this.classList.add('selection');
+      if (db.length == 3) {
+        this.createShift();
+      }
+    }
   }
 }
 
 let db = [];
 let calendar = new Calendar();
+let shift = new Shift();
 
 calendar.render(`.container`);
 
-function create3x2() {
-  let listID = [];
-  Array.from(document.querySelectorAll(".s"))
-    .forEach(x => listID.push(x.getAttribute('id')));
-  
-  function nightShift() {
-    let shiftArray =[];
-    function countNight() {
-      db.forEach(function(dbElement) {
-        let index = listID.findIndex(x => dbElement == x);
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-        gradeUp(index + 15);
-      });
-      
-      function gradeDown(index) {
-        if(index < 0) return;
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-      }
-      
-      function gradeUp(index) {
-        if(index > listID.length - 1) return;
-        shiftArray.push(listID[index]);
-        gradeUp(index + 15);
-      }
-    }
-    countNight();
-    console.dir(shiftArray);
-    return shiftArray;
-  }
-  
-  function dayShift() {
-    let shiftArray =[];
-    function countDay() {
-      db.forEach(function(dbElement) {
-        let index = listID.findIndex(x => dbElement == x);
-        if ((index - 5) < 0) {
-          index += 10;
-        } else {
-          index -= 5;
-        }
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-        gradeUp(index + 15);
-      });
-      
-      function gradeDown(index) {
-        if(index < 0) return;
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-      }
-      
-      function gradeUp(index) {
-        if(index > listID.length - 1) return;
-        shiftArray.push(listID[index]);
-        gradeUp(index + 15);
-      }
-    }
-    countDay();
-    console.dir(shiftArray);
-    return shiftArray;
-  }
-  
-  function middleShift() {
-    let shiftArray =[];
-    function countMiddle() {
-      db.forEach(function(dbElement) {
-        let index = listID.findIndex(x => dbElement == x);
-        if ((index - 10) < 0) {
-          index += 5;
-        } else {
-          index -= 10;
-        }
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-        gradeUp(index + 15);
-      });
-      
-      function gradeDown(index) {
-        if(index < 0) return;
-        shiftArray.push(listID[index]);
-        gradeDown(index - 15);
-      }
-      
-      function gradeUp(index) {
-        if(index > listID.length - 1) return;
-        shiftArray.push(listID[index]);
-        gradeUp(index + 15);
-      }
-    }
-    countMiddle();
-    console.dir(shiftArray);
-    return shiftArray;
-  }
-  
-  function start() {
-    listID.forEach(function(id) {
-      let classes = ['nightshift', 'dayshift', 'middleshift'];
-      for (let i = 0; i < classes.length; i++) {
-        document.getElementById(id).classList.remove(classes[i]);
-      }
-    });
-    
-    nightShift().forEach(function(id) {
-      document.getElementById(id).classList.add('nightshift');
-    });
-    dayShift().forEach(function(id) {
-      document.getElementById(id).classList.add('dayshift');
-    });
-    middleShift().forEach(function(id) {
-      document.getElementById(id).classList.add('middleshift');
-    });
-  }
-  start();
-}
-
-function dbInterface() {
-  let value = this.getAttribute('day');
-  let id = this.getAttribute('id');
-  if (db.find(x => id == x)) {
-    let index = db.findIndex(x => id == x);
-    db.splice(index, 1);
-    console.info(`Deleted: ${value}.`);
-    this.classList.remove('selection');
-  } else if (db.length == 3) {
-    console.log(`Already created.`);
-  } else {
-    db.push(id);
-    console.info(`Added: ${value}.`);
-    this.classList.add('selection');
-    if (db.length == 3) {
-      create3x2();
-    }
-  }
-}
-
 Array.from(document.querySelectorAll(".s"))
   .forEach(function (element) {
-    element.addEventListener('click', dbInterface);
+    element.addEventListener('click', shift.watch);
   });
-  
-console.dir(Array.from(document.querySelectorAll(".s")));
