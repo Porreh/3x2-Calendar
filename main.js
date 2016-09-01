@@ -150,7 +150,6 @@ function create3x2() {
       }
     }
     countDay();
-    console.dir(shiftArray);
     return shiftArray;
   }
   
