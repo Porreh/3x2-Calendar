@@ -105,7 +105,7 @@ class Shift {
 
     function gradeUp(index) {
       let tmpArray = [];
-      while (index < listID.length--) {
+      while (index < listID.length - 1) {
         tmpArray.push(listID[index]);
         index += 15;
       }
