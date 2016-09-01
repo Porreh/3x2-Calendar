@@ -100,7 +100,6 @@ class Shift {
         tmpArray.push(listID[index]);
         index -= 15;
       }
-      console.log(tmpArray);
       return tmpArray;
     }
 
@@ -110,7 +109,6 @@ class Shift {
         tmpArray.push(listID[index]);
         index += 15;
       }
-      console.log(tmpArray);
       return tmpArray;
     }
 
@@ -126,6 +124,7 @@ class Shift {
         shiftArray.push(listID[index]);
         shiftArray.concat(gradeDown(index - 15), gradeUp(index + 15));
       });
+      console.log(shiftArray);
       return shiftArray;
     }
 
