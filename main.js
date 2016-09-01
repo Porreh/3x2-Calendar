@@ -100,6 +100,7 @@ class Shift {
         tmpArray.push(listID[index]);
         index -= 15;
       }
+      console.log(tmpArray);
       return tmpArray;
     }
 
@@ -109,6 +110,7 @@ class Shift {
         tmpArray.push(listID[index]);
         index += 15;
       }
+      console.log(tmpArray);
       return tmpArray;
     }
 
