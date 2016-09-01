@@ -161,7 +161,7 @@ function create3x2() {
         if ((index - 10) < 0) {
           index += 5;
         } else {
-          index -= 5;
+          index -= 10;
         }
         shiftArray.push(listID[index]);
         gradeDown(index - 15);
