@@ -123,7 +123,6 @@ class Shift {
         }
         shiftArray = [].concat.apply(listID[index], gradeDown(index - 15), gradeUp(index + 15));
       });
-      console.log(shiftArray);
       return shiftArray;
     }
 
@@ -141,6 +140,7 @@ class Shift {
           document.getElementById(id)
             .classList.add(classes[0]);
         });
+        console.log(reShift(15, 15));
       reShift(5, 10)
         .forEach(function (id) {
           document.getElementById(id)
