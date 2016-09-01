@@ -41,9 +41,9 @@ class Calendar {
         for (let j = 0; j < 7; j++) {
           if (day <= monthLength && (i > 0 || j >= startDay)) {
             if (day === today && month === currentDate.getMonth()) {
-              html += `<div id="${month + 1}&${day}" day="${day}" class="day today">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day s today">`;
             } else {
-              html += `<div id="${month + 1}&${day}" day="${day}" class="day">`;
+              html += `<div id="${month + 1}&${day}" day="${day}" class="day s">`;
             }
           } else {
             html += `<div class="day clear">`;
@@ -227,12 +227,12 @@ function dbInterface() {
   }
 }
 
-Array.from(document.querySelectorAll(".day"))
+Array.from(document.querySelectorAll(".s"))
   .forEach(function (element) {
     element.addEventListener('click', dbInterface);
   });
   
-Array.from(document.querySelectorAll(".day"))
+Array.from(document.querySelectorAll(".s"))
   .forEach(function (x) {
     let id = x.getAttribute('id');
     console.log(id);
