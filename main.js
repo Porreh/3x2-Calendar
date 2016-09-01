@@ -5,11 +5,11 @@ class Calendar {
 
   generateHTML() {
     let currentDate = new Date(),
-      labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-      labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
+        labelsDay = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+        labelsMonths = ['Январь', 'Февраль', 'Март', 'Апрель',
                         'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
                         'Октябрь', 'Ноябрь', 'Декабрь'],
-      html = ``;
+        html = ``;
 
     function getDaysInMonth(month, year) {
       let maxDays = new Date(year, month, 0);
