@@ -144,7 +144,6 @@ class Shift {
           document.getElementById(id)
             .classList.add(classes[0]);
         });
-        console.log(reShift(15, 15));
       reShift(5, 10)
         .forEach(function (id) {
           document.getElementById(id)
