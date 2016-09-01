@@ -166,7 +166,7 @@ class Shift {
       console.info(`Added: ${value}.`);
       this.classList.add('selection');
       if (db.length == 3) {
-        self.createShift();
+        this.createShift();
       }
     }
   }
