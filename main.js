@@ -182,6 +182,7 @@ function create3x2() {
       }
     }
     countMiddle();
+    console.dir(shiftArray);
     return shiftArray;
   }
   
