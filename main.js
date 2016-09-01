@@ -231,4 +231,4 @@ Array.from(document.querySelectorAll(".s"))
     element.addEventListener('click', dbInterface);
   });
   
-console.dir(`All Elements: ${Array.from(document.querySelectorAll(".s"))}`);
+console.dir(Array.from(document.querySelectorAll(".s")));
