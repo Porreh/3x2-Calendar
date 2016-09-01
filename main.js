@@ -143,7 +143,7 @@ function create3x2() {
       }
       
       function gradeUp(index) {
-        if(index > listID.length) return;
+        if(index > listID.length - 1) return;
         shiftArray.push(listID[index]);
         gradeUp(index + 15);
       }
