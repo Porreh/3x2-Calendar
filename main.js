@@ -121,7 +121,7 @@ class Shift {
         } else {
           index -= prev;
         }
-        shiftArray.concat.apply(listID[index], gradeDown(index - 15), gradeUp(index + 15)));
+        shiftArray.concat.apply(listID[index], gradeDown(index - 15), gradeUp(index + 15));
       });
       console.log(shiftArray);
       return shiftArray;
