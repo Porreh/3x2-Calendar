@@ -126,7 +126,7 @@ function create3x2() {
     function countDay() {
       db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
-        if (index - 5) {
+        if ((index - 5) < 0) {
           index += 10;
         } else {
           index -= 5;
@@ -158,7 +158,7 @@ function create3x2() {
     function countMiddle() {
       db.forEach(function(dbElement) {
         let index = listID.findIndex(x => dbElement == x);
-        if (index - 10) {
+        if ((index - 10) < 0) {
           index += 5;
         } else {
           index -= 5;
